@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Achados e Perdidos</title>
+	<link rel="icon" href="imagem/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/site_fatec.css" type="text/css">
-    <link rel="stylesheet" href="css/aep.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-	<script src="js/contraste_fonte.js"></script>
+	<script src="js/contraste.js"></script>
 	<script src="js/fonte.js"></script>
 	<script defer src="script.js"></script>
     <script data-ad-client="ca-pub-8511042567050353" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -42,11 +42,11 @@
 			<li><a href="#conteudo" accesskey="1" title="Ir diretamente ao conteúdo do site">Ir para o conteúdo [1]</a></li>
 			<li><a href="#menu" accesskey="2" title="Ir diretamente ao menu do site">Ir para o menu [2]</a></li>
 			<li><a href="#rodape" accesskey="3" title="Ir diretamente ao rodapé do site">Ir para o rodapé [3]</a></li>
-		  	<li class="pgacess"><a href="acessibilidade.html" title="Acessibilidade">Acessibilidade</a></li>
+		  	<li class="pgacess"><a href="http://www.fateczl.edu.br/acessibilidade" title="Acessibilidade">Acessibilidade</a></li>
 			<li class="contraste"><a href="javascript:void(0);" id="contraste" title="Contraste Preto">Contraste Preto</a></li>
 			<li class="contraste"><a href="javascript:void(0);" id="semcontraste" title="Sem Contraste">Sem contraste</a></li>
-			<li><button name="increase-font" id="increase-font" title="Aumentar fonte">A +</button></li>
-            <li><button name="decrease-font" id="decrease-font" title="Diminuir fonte">A -</button></li>
+			<li class="aumenta"><a href="javascript:void(0);" id="aumenta" title="Aumentar a fonte">A +</a></li>
+			<li class="diminui"><a href="javascript:void(0);" id="diminui" title="Diminuir a fonte">A -</a></li>
 		  </ul>
 		  
 		</div>
@@ -84,6 +84,7 @@
 					<ul>
 						<li role="menuitem" aria-haspopup="true" aria-hidden="true"><a href="secretaria">Informações</a></li>
 						<li role="menuitem" aria-haspopup="true" aria-hidden="true"><a href="solicitacao_documentos">Solicitações de documentos e requerimentos</a></li>
+						<li role="menuitem" class="link" aria-haspopup="false"><a href="index.html">Achados e perdidos</a></li>
 					</ul>
 				</li>
 				<li role="menuitem" class="link" aria-haspopup="true"><a href="#">Cursos</a>
@@ -124,7 +125,6 @@
 				<li role="menuitem" class="link" aria-haspopup="true"><a href="http://fatec.sp.gov.br/">E-Mail Institucional-Microsoft</a></li>
 				<li role="menuitem" class="link" aria-haspopup="false"><a href="http://suporte.fateczl.edu.br/">Suporte DTI</a></li>
 				<li role="menuitem" class="link" aria-haspopup="false"><a href="contato">Fale conosco</a></li>
-				<li role="menuitem" class="link" aria-haspopup="false"><a href="index.html">Achados e perdidos</a></li>
 				<li role="menuitem" class="link" aria-haspopup="true"><a href="javascript:void(0);" class="icon" onclick="myFunction()">
     			<i class="fa fa-bars"></i>
 					</a></li>
@@ -331,31 +331,5 @@ function showSlides() {
 		
 		
 	</script>
-
-	<!--Aumentar e diminuit fonte -->
-<script type="text/javascript">
-	window.onload = function() {
-		var elementBody = document.querySelector('body');
-		var elementBtnIncreaseFont = document.getElementById('increase-font');
-		var elementBtnDecreaseFont = document.getElementById('decrease-font');
-		// Padrão de tamanho, equivale a 100% do valor definido no Body
-		var fontSize = 100;
-		// Valor de incremento ou decremento, equivale a 10% do valor do Body
-		var increaseDecrease = 10;
-
-		// Evento de click para aumentar a fonte
-		elementBtnIncreaseFont.addEventListener('click', function(event) {
-			fontSize = fontSize + increaseDecrease;
-			elementBody.style.fontSize = fontSize + '%';
-		});
-
-		// Evento de click para diminuir a fonte
-		elementBtnDecreaseFont.addEventListener('click', function(event) {
-			fontSize = fontSize - increaseDecrease;
-			elementBody.style.fontSize = fontSize + '%';
-		});
-	}
-</script>
-
 </body>
 </html>

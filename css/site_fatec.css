@@ -10,7 +10,6 @@ html {
     padding: 0;
 }
 body{
-    
     display: flex;
     flex-direction: column;
 }
@@ -30,6 +29,11 @@ body{
 
 }
 #conteudo{
+    width: 90%;
+    margin: 4%;
+    font-family: Verdana, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "sans-serif";
+    text-align:left;
+    height: auto;
     display: flex;
     flex-direction: column;
 }
@@ -291,6 +295,7 @@ iframe {
 	
 }
 
+
 .menu{
 list-style:none; 
 float:left; 
@@ -331,21 +336,33 @@ left: 0;
 }
 	
 }
+
 #btnformreg{
-    padding: 5px;
-    height: 120%;
-    width: 10%;
+    padding: 15px;
+    height: auto;
+    width: auto;
     border: none;
     background-color: #DA1111;
     color: #FFF;
     border-radius: 10px;
     align-self: flex-end;
-    margin-right: 30px;
+    margin: 30px 30px 0px 0px;
+    cursor: pointer;
 }
 #contreg{
     display: flex;
     flex-direction: column;
     align-items: center;
+} 
+#contreg h2{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:x-large;
+    margin: 20px;
+}
+#contreg hr{
+    width: 90%;
+    color: #000;
+
 }
 /* When the screen is less than 1331 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
 @media screen and (max-width: 1280px) {
@@ -446,6 +463,16 @@ left: 0;
 }
 
 @media screen and (max-width:1000px) {
+    #info{
+        display: flex;
+        flex-direction: column;
+    }
+    #info p{ 
+        width: 90%;
+    }
+    #info img{
+        margin-bottom: 30px;
+    }
     ul.atalhos {
         font-family: Verdana, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "sans-serif";
         font-size: 10pt;
@@ -484,9 +511,21 @@ left: 0;
     ul.atalhos li.diminui {
         padding-left: 1%;
     }
+    
+#produtos img{
+    width: 200px;
 }
-
+#produto-single img{
+    max-width: 50%;
+}
+.produto-single li{
+    width: 70%;
+}
+}
 @media screen and (max-width:960px) {
+    ul.atalhos li {
+        display: none;
+    }
     ul.atalhos {
         font-family: Verdana, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "sans-serif";
         font-size: 0.8em;
@@ -792,6 +831,10 @@ th {
         display: inline;
         max-width: 4%;
     }
+    #produtos{
+        flex-direction: column;
+        width: 500px;
+}
 }
 
 /*.container {
@@ -1050,6 +1093,9 @@ transform: translate(-50%, -50%);
         padding: 0.3%;
         float: left;
     }
+    .produto-single li{
+        width: 40%;
+    }
 
 }
 
@@ -1120,7 +1166,7 @@ transform: translate(-50%, -50%);
         width: 7%;
         float: left;
     }
-
+    
     /*	.boxnews{
 	max-width: 200px;
 	height: auto;
@@ -1129,6 +1175,10 @@ transform: translate(-50%, -50%);
 	float: left;
 	
 }*/
+#produtos{
+    flex-direction: column;
+    width: 500px;
+}
     .text a {
         color: white;
         font-size: 0.6em;
@@ -1138,14 +1188,14 @@ transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
         text-align: center;
     }
-
-    #info{
-        display: flex;
-        flex-direction: column;
+    #formreg{
+        width: 80%;
+        padding: 10px;
     }
-    #info p{ 
-        width: 90%;
+    #btnformreg{
+        width: 100px;
     }
+    
 
     /*.events{
 	max-width: 200px;
@@ -1161,6 +1211,7 @@ transform: translate(-50%, -50%);
 
 
     }
+    
 }
 ul.atalhos{
     padding-left: 2%;
@@ -1402,7 +1453,6 @@ input[type=reset] {
         width: 400px;
         /* Para ver as bordas do formulário */
         padding: 1em;
-        border: 1px solid #CCC;
         border-radius: 1em;
     }
     form div + div {
@@ -1431,7 +1481,6 @@ input[type=reset] {
 
     input:focus, textarea:focus {
         /* Dar um pouco de destaque nos elementos ativos */
-        border-color: #000;
     }
 
     textarea {
@@ -1462,9 +1511,6 @@ input[type=reset] {
     justify-content: space-around;
 }
 
-.maxh-100 {
-    max-height: 70vh;
-}
 
 /* INDEX */
 
@@ -1598,6 +1644,7 @@ li {
     color: #FFF;
     font-size: 16px;
     margin-left: 30px;
+    cursor: pointer;
 }
 
 .formdescricao button:hover {
@@ -1670,11 +1717,13 @@ label.mensa {
         .produto-single{
             width: 66.3%;
             padding: 0 20px;
-            border: 0.5px solid #ccc;
             margin: 20px 0;
             margin-top: 20px;
             margin-bottom: 20px;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
         }
 
         .produto-single img{
@@ -1682,17 +1731,20 @@ label.mensa {
         }
 
         .produto-single p {
-            text-align: center;
+            text-align: inherit;
             font-size: 16px;
             padding: 10px;
+            font-family: Arial, Helvetica, sans-serif;
+            align-self: flex-start;
         }
 
         .produto-single li {
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 250px;
-            height: 40px;
+            width: auto;
+            height: auto;
+            padding: 15px;
             margin-bottom: 20px;
             background-color: #DA1111;
             border-radius: 10px;
@@ -1704,17 +1756,12 @@ label.mensa {
 
         .produto-single a {
             text-decoration: none;
+
             font-family: 'Inter', sans-serif;
             color: #FFF;
             font-size: 17px;
         }
 
-        @media screen and (max-width: 768px){
-            .produto-single{
-                width: 100%;
-                margin-right: 0;
-            }
-        }
 
         @media screen and (max-width:1331px) {
 
@@ -1729,6 +1776,11 @@ label.mensa {
 
         }
         @media screen and (max-width:600px){
+            
+.categorias li{
+    width: 300px;
+    height: 8%;
+}
 
             .formdescricao textarea{
                 width:300px;
@@ -1745,4 +1797,3 @@ label.mensa {
                 width: auto;
             }
         }
-

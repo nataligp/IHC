@@ -3,12 +3,15 @@
 <head>
     <meta charset="utf-8">
     <title>Achados e Perdidos</title>
+	<link rel="icon" href="imagem/favicon.png" type="image/png">
     <link rel="stylesheet" href="css/site_fatec.css" type="text/css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script src="js/contraste.js"></script>
 	<script src="js/fonte.js"></script>
+	<script src="js/mascara.js"></script>
 	<script defer src="script.js"></script>
     <script data-ad-client="ca-pub-8511042567050353" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script>
@@ -41,7 +44,7 @@
 			<li><a href="#conteudo" accesskey="1" title="Ir diretamente ao conteúdo do site">Ir para o conteúdo [1]</a></li>
 			<li><a href="#menu" accesskey="2" title="Ir diretamente ao menu do site">Ir para o menu [2]</a></li>
 			<li><a href="#rodape" accesskey="3" title="Ir diretamente ao rodapé do site">Ir para o rodapé [3]</a></li>
-		  	<li class="pgacess"><a href="acessibilidade.html" title="Acessibilidade">Acessibilidade</a></li>
+		  	<li class="pgacess"><a href="http://www.fateczl.edu.br/acessibilidade" title="Acessibilidade">Acessibilidade</a></li>
 			<li class="contraste"><a href="javascript:void(0);" id="contraste" title="Contraste Preto">Contraste Preto</a></li>
 			<li class="contraste"><a href="javascript:void(0);" id="semcontraste" title="Sem Contraste">Sem contraste</a></li>
 			<li class="aumenta"><a href="javascript:void(0);" id="aumenta" title="Aumentar a fonte">A +</a></li>
@@ -146,25 +149,26 @@
     <!-- ################# INICIO DO CÓDIGO DO ACHADOS E PERDIDOS FATEC ##################-->
 
 
-        <!-- ################# FORMULÁRIO FINAL ##################-->
-    <main id="contreg" class="flex-container sp-a maxh-100">
+        <!-- ################# FORMULÁRIO ##################-->
+    <main id="contreg">
         <form id="formreg" action="/pagina-processa-dados-do-form" method="post">
                     <label for="nome_cad" class="required">Nome:</label>
-                    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="seu nome"/>
+                    <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome"/>
                     <label for="email_cad" class="required">E-mail:</label>
-                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="seu e-mail"/> 
-                    <label for="tel_cad" class="required">Telefone:</label>
+                    <input id="email_cad" name="email_cad" required="required" type="email" placeholder="e-mail"/> 
+                    <label for="tel_cad"  class="required">Telefone:</label>
                     <input id="tel_cad" name="tel_cad" required="required" type="telefone" placeholder="(xx) xxxxx-xxxx"/> 
                     <label for="mensagem" class="required">Mensagem:</label>
-					<textarea name="mensagem" id="mensagem" style="height: 100px;" cols="20" rows="10" required=""></textarea>
+					<textarea name="mensagem" id="mensagem" cols="20" rows="5" required=""></textarea>
 					<button type="submit" id="btnformreg">Enviar</button>	
 </form>
 <hr>
 
 <!-- Itens selecionados -->
-
     <h2>Itens escolhidos:</h2>
+	<div id="itens">
 
+	</div>
 </main>
 
 	<footer id="rodape">
@@ -264,68 +268,5 @@
 			</ul>
 		</section>
 	</footer>
-    <script>
-	var slideIndex = 0;
-showSlides();
-
-function showSlides() {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none"; 
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1} 
-    slides[slideIndex-1].style.display = "block"; 
-    setTimeout(showSlides, 7000); // Change image every 2 seconds
-}
-    </script>
-    <script>
-		function myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x.className === "menu") {
-        x.className += " responsive";
-    } else {
-        x.className = "menu";
-    }
-}
-    </script>
-	<!-- NAVEGAÇÃO NO MENU ATRAVÉS DO TAB-->
-	<script>
-		var filho;
-		$(".link").focusin(function(){
-			$(filho).css("display", "none");
-			filho = this.children[1];
-			$(filho).css("display", "block");			
-		});	
-		
-		
-	</script>
-
-	<!--Aumentar e diminuit fonte -->
-<script type="text/javascript">
-	window.onload = function() {
-		var elementBody = document.querySelector('body');
-		var elementBtnIncreaseFont = document.getElementById('increase-font');
-		var elementBtnDecreaseFont = document.getElementById('decrease-font');
-		// Padrão de tamanho, equivale a 100% do valor definido no Body
-		var fontSize = 100;
-		// Valor de incremento ou decremento, equivale a 10% do valor do Body
-		var increaseDecrease = 10;
-
-		// Evento de click para aumentar a fonte
-		elementBtnIncreaseFont.addEventListener('click', function(event) {
-			fontSize = fontSize + increaseDecrease;
-			elementBody.style.fontSize = fontSize + '%';
-		});
-
-		// Evento de click para diminuir a fonte
-		elementBtnDecreaseFont.addEventListener('click', function(event) {
-			fontSize = fontSize - increaseDecrease;
-			elementBody.style.fontSize = fontSize + '%';
-		});
-	}
-</script>
-
 </body>
 </html>

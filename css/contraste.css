@@ -184,6 +184,20 @@ iframe{
 .formdescricao button:hover {
     background-color: #FFF;
 }
+#btnformreg{
+	color: #000;
+	background-color: #25eeee;
+}
+#btnformreg:hover {
+    background-color: #FFF;
+}
+#formreg{
+    color: #FFF;
+}
+#contreg h2, hr{
+    color: #FFF;
+}
+
 @media screen and (max-width:1331px){
 	ul.atalhos{
 	font-family: Verdana,"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans","sans-serif";
@@ -386,10 +400,6 @@ ul.atalhos li.diminui{
 ul.atalhos li{
 	display: none;
 }
-ul.atalhos li a{
-	
-	color: #454343;
-}
 
 ul.atalhos li a:hover{
 	color: #2428F3;
@@ -433,7 +443,7 @@ ul.atalhos li.diminui{
 	line-height: 150%;
 }
 #conteudo a{
-    color:yellow;
+    color: yellow;
 }
 #conteudo a:hover{
 	color: #FFF;
@@ -1206,11 +1216,10 @@ input, textarea, select{
 	border-style: solid;
 	margin: 1%;
 	padding: 1%;
-	width: 60%;
 }
 .required:after{
 	content: " *";
-	color: #000;
+	color: #FFF;
 }
 input[type=submit]{
 	border-radius: 5px;
@@ -1232,6 +1241,18 @@ input[type=reset]{
 	width: 30%;
 	background-color: yellow;
 	color: #000000;
+}
+.produto-single li{
+	background-color: #25eeee;
+}
+.produto-single li:hover{
+	background-color: #FFF;
+}
+.produto-single p{
+	color: #FFF;
+}
+.produto-single img{
+	background-color: #FFF;
 }
 @media screen and (max-width:370px){
 	.trabalhos{font-size: 0.5em; word-wrap: break-word; overflow-wrap: break-word;}
@@ -1286,4 +1307,7 @@ input[type=reset]{
 	.categorias ul{
 		width: auto;
 	}
+}
+#prodsinga{
+    color: #000;
 }
