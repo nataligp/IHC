@@ -55,9 +55,7 @@ h3{
 .pagnews{
 	width:45%;
 	height: auto;
-	
-	
-}
+}	
 ul.atalhos{
 	font-family: Verdana,"Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans","sans-serif";
 	font-size: 10pt;
@@ -170,7 +168,21 @@ iframe{
 	
 }
 .categorias li{
-	background-color: rgb(252, 56, 56)
+	background-color: #25eeee;
+}
+.categorias a{
+	color: #000;
+}
+.formdescricao button{
+	color: #000;
+	background-color: #25eeee;
+
+}
+.categorias li:hover {
+    background-color: #FFF;
+}
+.formdescricao button:hover {
+    background-color: #FFF;
 }
 @media screen and (max-width:1331px){
 	ul.atalhos{
